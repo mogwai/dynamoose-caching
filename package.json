@@ -1,0 +1,28 @@
+{
+  "name": "dynamoose-caching",
+  "version": "0.0.1",
+  "description": "A plugin for the dyanmoose package that enables caching strategies",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogwai/dynamoose-caching.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "dynamo",
+    "database",
+    "aws",
+    "dynamoose",
+    "caching"
+  ],
+  "author": "Harry Coultas BLum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mogwai/dynamoose-caching/issues"
+  },
+  "homepage": "https://github.com/mogwai/dynamoose-caching#readme",
+  "dependencies": {}
+}
