@@ -1,28 +1,36 @@
 const DynamoCache = require('../')
+
 const dynamo = require('../dynamoose')
 dynamo.AWS.config.update({
-  region: "eu-west-1",
+  region: "local",
   maxRetries: 20,
 })
 
 dynamo.local()
-
-const { test } = require('ava')
 
 const Owner = new dynamo.Schema({
   name: String,
   pets: [String],
 })
 
-test('Can setup', t => {
-  const OwnerModel = dynamo.model("Owners", Owner)
+const OwnerModel = dynamo.model("Owners", Owner, { create: true, update: true, })
 
-  OwnerModel.plugin(DynamoCache, {
-    operations: ["scan.all", "query"],
-    timeout: 3000,
-  })
+async function main() {
+  try {
+    OwnerModel.plugin(DynamoCache, {
+      // operations: ["scan.all", "query"],
+      timeout: 3000,
+    })
 
-})
+    let o = new OwnerModel({
+      name: "Harry"
+    })
+    await o.save()
+    let results = await OwnerModel.scan().all().exec()
+    results = await OwnerModel.scan().all().exec()
+  } catch (e) {
+    console.log(e.stack)
+  }
+}
 
-
-exports = module.exports = OwnerModel
+main()
