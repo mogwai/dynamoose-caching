@@ -18,7 +18,7 @@ const OwnerModel = dynamo.model("Owners", Owner, { create: true, update: true, }
 async function main() {
   try {
     OwnerModel.plugin(DynamoCache, {
-      // operations: ["scan.all", "query"],
+      operations: ["scan", ""],
       timeout: 3000,
     })
 
@@ -28,6 +28,7 @@ async function main() {
     await o.save()
     let results = await OwnerModel.scan().all().exec()
     results = await OwnerModel.scan().all().exec()
+    debug
   } catch (e) {
     console.log(e.stack)
   }
