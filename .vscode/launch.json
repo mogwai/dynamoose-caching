@@ -12,7 +12,7 @@
       "runtimeArgs": [
         "run-script",
         "debug:test",
-        "test/setup.test.js"
+        "tests/setup.js"
       ],
       "port": 9229
     },
@@ -20,7 +20,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/index.js"
+      "program": "${file}"
     }
   ]
 }
