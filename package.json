@@ -1,6 +1,6 @@
 {
   "name": "dynamoose-caching",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A plugin for the dyanmoose package that enables caching strategies",
   "main": "index.js",
   "scripts": {
