@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/mogwai/dynamoose-caching#readme",
   "dependencies": {
-    "lodash": "^4.17.4",
     "lru-cache": "^4.1.3"
   },
   "devDependencies": {
