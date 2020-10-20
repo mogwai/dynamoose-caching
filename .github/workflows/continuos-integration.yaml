@@ -1,3 +1,20 @@
+name: Merge me!
+
+on:
+  check_suite:
+    types:
+      - completed
+  pull_request:
+    types:
+      - edited
+      - labeled
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+      - unlabeled
+      - unlocked
+
 jobs:
   # Other jobs are defined above.
   merge-me:
